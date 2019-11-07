@@ -18,5 +18,7 @@ yarn test
 ```
 
 ## Notes
-
+- Sketched out wireframes to see what components I will need and what the UX will look like
+- Set up app and organization using Create-React-App
+- Create components needed
 
