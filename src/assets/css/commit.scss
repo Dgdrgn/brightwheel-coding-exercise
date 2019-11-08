@@ -12,5 +12,21 @@
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+
+  &__name-and-date {
+    flex: none;
+    margin-right: 20px;
+
+    & > p {
+      margin: 0;
+    }
+  }
+
+  &__message {
+    flex: auto;
+
+    & > p {
+      margin: 0;
+    }
+  }
 }
