@@ -3,6 +3,69 @@
 body {
   margin: 0;
   font-family: "Arial";
+  font-size: 18px;
+}
+
+.h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+ 
+.h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 15px;
+}
+
+.h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.h4 {
+  font-size: 21px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.button {
+  box-shadow: none;
+  background-color: $white;
+  color: $black;
+  border: solid 2px $black;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  margin: 10px 0;
+  padding: 10px 20px;
+
+  &.primary {
+    background-color: $secondary;
+    color: $white;
+    border-color: $secondary;
+
+    &:hover {
+      background-color: $white;
+      color: $secondary;
+    }
+  }
+
+  &.secondary {
+    background-color: $white;
+    color: $black;
+    border-color: $black;
+
+    &:hover {
+      color: $secondary;
+      border-color: $secondary;
+    }
+  }
 }
 
 .app {
@@ -31,5 +94,16 @@ body {
   
   .content {
     padding: 30px;
+  }
+
+  .error-banner {
+    border: solid 2px $error;
+    background-color: $white;
+    color: $error;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+    padding: 20px;
   }
 }

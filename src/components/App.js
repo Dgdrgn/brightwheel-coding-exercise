@@ -6,7 +6,6 @@ import logo from "../assets/img/logo.png";
 
 import "../assets/css/app.scss";
 
-
 function App() {
   return (
     <div className="app">

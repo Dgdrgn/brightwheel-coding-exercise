@@ -1,0 +1,16 @@
+@import "./colors.scss";
+
+.commit {
+  border-bottom: solid 2px $black;
+
+  &:last-child {
+    border: none;
+  }
+
+  margin: 10px 0;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

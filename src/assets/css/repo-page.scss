@@ -1,0 +1,14 @@
+@import "./colors.scss";
+
+.repo-page {
+  display: flex;
+  flex-direction: column;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+  }
+}
