@@ -42,3 +42,6 @@ I would dig further into making sure our users get the best experience out of ou
 I would also add testing around the flow of th app to make sure everything is in place. I don't know if there are better ways to test out a feature where most of the logic is in the components and their renders, but I would add some integration tests around the initial load of the page as well as the details page with the commit list. 
 
 Because we are working with 3rd-party APIs, we should be careful around how we test the feature. We could add some sort of ping for us to check that the APIs are up or when they're down, but depending on our workflow and what issues we want our tests to catch, we'll probably not want our tests to fail due to external factors.
+
+### Miscellaneous
+The commit history in the repo spans across ~20 hours. This is because I unfortunately couldn't find a good chunk of time to sit down and work on this all at once, so I started it for ~20 minutes the day before and ended up finishing it the morning after.
