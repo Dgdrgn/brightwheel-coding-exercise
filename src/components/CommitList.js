@@ -10,7 +10,8 @@ export default class CommitList extends React.Component {
 
     this.state = {
       commits: [],
-      error: false
+      error: false,
+      loading: false
     }
   }
 
@@ -20,6 +21,8 @@ export default class CommitList extends React.Component {
     yesterday.setDate(yesterday.getDate() - 1);
 
     const yesterdayAsString = yesterday.toISOString();
+
+    this.setState({ loading: true });
 
     try {
       // TODO: Move token somewhere more secure
@@ -33,12 +36,12 @@ export default class CommitList extends React.Component {
       const json = await response.json();
       if (json.message) {
         // Error - sometimes not caught by try/catch
-        this.setState({ commits: [], error: true });
+        this.setState({ commits: [], error: true, loading: false });
       } else {
-        this.setState({ commits: json, error: false });
+        this.setState({ commits: json, error: false, loading: false });
       }
     } catch(e) {
-      this.setState({ commits: [], error: true });
+      this.setState({ commits: [], error: true, loading: false });
     }
   }
 
@@ -47,20 +50,28 @@ export default class CommitList extends React.Component {
   }
 
   render() {
-    const { commits, error } = this.state;
+    const { commits, error, loading } = this.state;
     
     return (
       <div className="commit-list">
         <h2 className="h3">Commits - Last 24 Hrs</h2>
-        {error ? (
-          <div className="error-banner">
-            There was an error getting commits. Please refresh the page and try again.
+        {loading ? (
+          <div className="loading">
+            Loading...
           </div>
         ) : (
           <>
-            {commits.map(commit => (
-              <Commit commit={commit} />
-            ))}
+            {error ? (
+              <div className="error-banner">
+                There was an error getting commits. Please refresh the page and try again.
+              </div>
+            ) : (
+              <>
+                {commits.map(commit => (
+                  <Commit commit={commit} />
+                ))}
+              </>
+            )}
           </>
         )}
       </div>
